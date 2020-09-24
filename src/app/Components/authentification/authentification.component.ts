@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthentificationService} from '../../Services/authentification.service';
+import {FirebaseService} from '../../Services/firebase.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {User} from '../../Models/User';
 
 @Component({
   selector: 'app-authentification',
@@ -12,30 +11,18 @@ import {User} from '../../Models/User';
 export class AuthentificationComponent implements OnInit {
 
    isLogError: boolean=false;
-   user: User;
+  FullName: any;
 
-  constructor(private authService: AuthentificationService,private router:Router) { }
+  constructor(public auth: FirebaseService, private router:Router) { }
 
   ngOnInit(): void {
-    this.user=new User();
-    if(localStorage.getItem("userToken"))
-    {
 
-      this.router.navigate( ["/cvs"])
-    }
   }
+//login with google function
+  loginWithGoogle()
+  {
 
-  Onlogin(){
-
-    this.authService.login(this.user).subscribe(data => {
-
-    localStorage.setItem('userToken',data.access_token)
-      this.router.navigate(['/cvs'])
-
-    },
-      (err : HttpErrorResponse)=>{
-      this.isLogError=true;
-      });
+    this.auth.googleSignin(this.FullName)
   }
 
 }

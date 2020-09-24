@@ -4,6 +4,7 @@ import { Directive, Output, Input, EventEmitter, HostBinding, HostListener } fro
   selector: '[appDragDrop]'
 })
 export class DragDropDirective {
+
   @Output() onFileDropped = new EventEmitter<any>();
 
   @HostBinding('style.background-color') private background = '#f5fcff'
@@ -34,13 +35,14 @@ export class DragDropDirective {
     if (files.length > 0) {
 
 
-        this.onFileDropped.emit(files)
-      }
+      this.onFileDropped.emit(files)
+    }
 
 
 
 
 
   }
+
 
 }

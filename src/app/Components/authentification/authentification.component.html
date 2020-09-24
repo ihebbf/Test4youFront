@@ -1,24 +1,19 @@
+<div class="all">
 <div class="login">
 <form class="form-signin">
   <div class="text-center mb-4">
-    <img class="mb-4" src="/../assets/images/sofrecom_logo.png" alt="" width="250" height="150">
-    <h1 class="h3 mb-3 font-weight-normal">Authentification</h1>
-  </div>
-  <div *ngIf="isLogError" class="form-label-group">
-    <div class="alert alert-danger" role="alert">Email ou password incorrect</div>
-
+    <img class="mb-4" src="../assets/images/T4U.jpg" alt="" width="150" height="150">
+    <h1 class="h3 mb-3 font-weight-normal">Welcome</h1>
   </div>
 
   <div class="form-label-group">
-    <input type="email" id="inputEmail" class="form-control" name="email" [(ngModel)]="user.email" placeholder="Email address" required autofocus>
-    <label for="inputEmail">Email address</label>
+    <input type="text" id="inputEmail" class="form-control" name="FullName" placeholder="Nom Complet" required autofocus [(ngModel)]="this.FullName" >
+    <label for="inputEmail">Nom Complet</label>
   </div>
-
-  <div class="form-label-group">
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" [(ngModel)]="user.password" required>
-    <label for="inputPassword">Password</label>
-  </div>
-  <p>Vous n'avez pas encore de compte ?<a routerLink="/inscription"> Créez-en un.</a></p>
-  <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="Onlogin()">Login</button>
+<br>
+  <br>
+  <button class="btn btn-danger btn-block signin" (click)="loginWithGoogle()"><i class="fa fa-google"></i> Sign in with <b>Google</b></button>
 </form>
+</div>
+
 </div>

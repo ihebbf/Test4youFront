@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
-import {HttpErrorResponse} from '@angular/common/http';
-import {AuthentificationService} from './Services/authentification.service';
-import {CvService} from './Services/cv.service';
+import {FirebaseService} from './Services/firebase.service';
+import { AngularFireAuth } from 'angularfire2/auth';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,11 +10,8 @@ import {CvService} from './Services/cv.service';
 })
 export class AppComponent implements OnInit {
   navigationSubscription
-  showMenu:boolean = true;
-  title = 'CvAnalyserFront1';
   role:string;
-  prenom:string;
-  constructor(public router: Router,private authService: AuthentificationService,private  cvService:CvService) {
+  constructor(public router: Router, public authService: FirebaseService, public afAuth: AngularFireAuth) {
 
     // subscribe to the router events. Store the subscription so we can
     // unsubscribe later.
@@ -26,41 +23,11 @@ export class AppComponent implements OnInit {
     });
   }
   ngOnInit() {
-    if(localStorage.getItem('userToken')){
-      this.authService.getCurrentUser().subscribe(data => {
-
-          this.role=data.role
-          this.prenom=data.prenom
-          if (this.role!="collaborateur"){
-            localStorage.setItem("isNotCollaborateur","true")
-            return true
-
-          }
-          else {
-            localStorage.setItem("isNotCollaborateur","false")
-            return false
-
-          }
-        },
-        (err : HttpErrorResponse)=>{
-
-        });
-    }}
+  }
+//logout function
   Logout() {
-    localStorage.removeItem('userToken')
-    localStorage.removeItem('isNotCollaborateur')
-    this.router.navigate(['/login'])
+this.authService.signOut()
   }
 
-  isNotCollaborateur()
-  {
-    if (this.role!="collaborateur"){
-      return true
 
-    }
-    else {
-      return false
-
-    }
-  }
 }

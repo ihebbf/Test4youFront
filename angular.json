@@ -20,15 +20,11 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/sofrecom.ico",
               "src/assets"
+
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/boosted/scss/boosted.scss",
-              "node_modules/boosted/dist/css/orangeIcons.css",
-              "node_modules/boosted/dist/css/orangeHelvetica.css",
-              "node_modules/ng-boosted/style/ng-boosted.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -89,10 +85,10 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/sofrecom.ico",
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
             "scripts": []

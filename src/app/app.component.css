@@ -107,6 +107,18 @@ body {
 .logosof{
 
   padding-top: 100px;
-  padding-left: 16px;
+  padding-left: 40px;
 }
 
+.class-name {
+color:red;
+}
+.profileImage{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.NavLinks{
+
+  margin-left: 210px;
+}
