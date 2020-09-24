@@ -1,0 +1,39 @@
+<div class="uploadfilecontainer"   (click)="fileInput.click()" appDragDrop (onFileDropped)="uploadFile($event)">
+  <input hidden type="file"  #fileInput (change)="uploadFile($event.target.files)"  multiple>
+  <p class="description">Select video files to upload</p>
+  <p class="description1">or drag and drop video files</p>
+</div>
+
+
+<div *ngFor="let file of files;let i=index">
+  <div  class="files-list" >
+    <p>{{ file.name}}</p>
+    <div  *ngIf="percentage | async as pct">
+      <progress class="progress" [value]="pct" max="100"></progress>
+      {{ pct | number }}%
+    </div>
+    <div *ngIf="snapshot | async as snap">
+
+      <div *ngIf="downloadURL as url">
+
+      </div>
+    </div>
+      <button class="delete-file" (click)="deleteAttachment(i)">
+      <img src="/../assets/images/Recycle_Bin_Full.png">
+    </button>
+  </div>
+
+
+
+</div>
+
+
+
+<div class="importButton">
+  <div *ngIf="verifExtension" class="alert alert-danger" role="alert">
+    Veuillez importer un fichier mp4 ...  </div>
+  <button  type="button" class="btn btn-primary import" (click)="startUpload()" >Import Videos</button>
+
+</div>
+
+

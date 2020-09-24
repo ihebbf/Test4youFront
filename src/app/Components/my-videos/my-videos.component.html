@@ -1,0 +1,49 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pl-3 pr-3 mt-5 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Videos List</h1>
+
+</div>
+
+
+<br>
+<div class="table-responsive  pl-3 pr-3" id="scrollMe">
+  <table id="news-table" class="table tablesorter mb-5 tablesorter-default tablesorterebe97d3cffd22" role="grid" aria-labelledby="tablesorterebe97d3cffd22caption">
+    <caption id="tablesorterebe97d3cffd22caption">
+
+    </caption>
+
+    <thead class="cf">
+    <tr role="row" class="tablesorter-headerRow">
+      <th scope="col" class="header tablesorter-header " data-column="1" tabindex="0" role="columnheader" aria-disabled="true" aria-controls="news-table"  aria-sort="none" aria-label="Title: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><span>File Name</span></div></th>
+
+      <th scope="col" class="header  " data-column="3" tabindex="0" role="columnheader" aria-disabled="true" aria-controls="news-table"  aria-label="Category: No sort applied, activate to apply an ascending sort" style="user-select: none;"><span>path</span>
+      <th scope="col" class="header tablesorter-header " data-column="2" tabindex="0" role="columnheader" aria-disabled="true" aria-controls="news-table"  aria-sort="none" aria-label="Date: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><span>Link </span></div></th>
+
+    </tr>
+    </thead>
+    <tbody aria-live="polite" aria-relevant="all">
+    <tbody aria-live="polite" aria-relevant="all">
+
+
+    <tr role="row" *ngFor="let file of files">
+
+
+
+
+      <td class="align-middle">{{file.data.FileName}}</td>
+      <td class="align-middle">{{file.data.path}}</td>
+      <td class="align-middle" width="100">{{file.data.downloadURL}}</td>
+
+
+
+
+
+    </tr>
+    </tbody>
+
+  </table>
+
+
+
+</div>
+
+

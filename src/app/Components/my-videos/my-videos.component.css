@@ -1,0 +1,13 @@
+.files-list {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 10px auto;
+  background: #ffffff;
+  border: 1px dashed;
+  border-radius: 12px;
+  padding: 5px;
+  color: #ff7090;
+}
+.FilName{
+padding-left: 44%}

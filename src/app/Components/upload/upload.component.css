@@ -1,0 +1,59 @@
+.uploadfilecontainer {
+  background-image: url("/../assets/images/cloud-2044823_960_720.png");
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: center;
+  height: 300px;
+  width: 40%;
+  margin: 20px auto;
+  border: 2px dashed #ff3e61;
+  border-radius: 10px;
+}
+
+.uploadfilecontainer:hover {
+  cursor: pointer;
+  background-color: #ec9ec3 !important;
+  opacity: 0.8;
+}
+
+.files-list {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 10px auto;
+  background: #ffffff;
+  border: 1px dashed;
+  border-radius: 12px;
+  padding: 5px;
+  color: #ff7090;
+}
+
+.files-list .delete-file {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.files-list .delete-file img{
+  width:30px;
+}
+.importButton{
+
+  text-align: center;
+
+}
+.import{
+
+  background-color: #ff7090;}
+.progress{
+
+  color: #ff7090;}
+.description{
+
+  padding-top: 220px;
+  color: #555555;
+padding-left: 150px}
+.description1{
+
+
+  color: #555555;
+  padding-left: 150px}
